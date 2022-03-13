@@ -1,0 +1,15 @@
+.button {
+  color: black;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 45px;
+  border-radius: 3px;
+  border: 1px solid #efcb36;
+  background: linear-gradient(#f6e254, #eac832);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(#ebd746, #e4c22e);
+  }
+}

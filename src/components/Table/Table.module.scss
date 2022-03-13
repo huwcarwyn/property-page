@@ -1,0 +1,23 @@
+@use "../../styling/variables" as *;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableRow {
+}
+
+.tableHeadCell {
+  padding: 10px 0;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  background-color: $grey-dark;
+  border-bottom: 2px solid $grey-darkest;
+}
+
+.tableCell {
+  padding: 10px;
+  text-align: center;
+  background-color: $grey-light;
+}
