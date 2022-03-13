@@ -1,0 +1,21 @@
+@use "../../styling/variables" as *;
+
+.propertyList {
+  margin: 0;
+  padding: 20px;
+  list-style-type: none;
+  background-color: $grey-light;
+}
+
+.propertyListItem {
+  padding: 5px 0;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.selected {
+  font-weight: bold;
+}
