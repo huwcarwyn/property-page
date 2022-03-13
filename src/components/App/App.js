@@ -7,9 +7,9 @@ import {
   TableHeadCell,
   TableCell,
 } from "src/components/Table";
-import logo from "src/logo.svg";
 import { Button } from "src/components/Buttons";
 import { TextInput } from "src/components/Inputs";
+import { AppHeader } from "src/components/AppHeader";
 import { PropertyFilter } from "src/components/PropertyFilter";
 import { fetchProperties, fetchPropertyDetails } from "src/api";
 
@@ -46,19 +46,22 @@ function PropertyRow({ property }) {
 function SearchBar({ onSubmit }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSubmit = () => onSubmit(searchTerm);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(searchTerm);
+  };
 
   return (
-    <div className={styles.searchBar}>
+    <form onSubmit={handleSubmit} className={styles.searchBar}>
       <TextInput
         value={searchTerm}
         onChange={setSearchTerm}
         placeholder="Address"
       />
       <div className={styles.searchButtonWrapper}>
-        <Button onClick={handleSubmit}>Search</Button>
+        <Button type="submit">Search</Button>
       </div>
-    </div>
+    </form>
   );
 }
 
@@ -115,13 +118,7 @@ export function AppComponent() {
 
   return (
     <div className="App">
-      <div className={styles.header}>
-        <div className={`container ${styles.headerInner}`}>
-          <img src={logo} className={styles.logo} alt="IMMO logo" />
-
-          <h1 className={styles.pageTitle}>Property search tool</h1>
-        </div>
-      </div>
+      <AppHeader />
 
       <div className="container">
         <div className={styles.selectedProperties}>
